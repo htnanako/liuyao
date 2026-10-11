@@ -12,6 +12,7 @@ import {
 } from "@/lib/liuyao/engine";
 import { loadHistory, saveHistory, type SavedReading } from "@/lib/liuyao/history";
 import { BRANCH_ELEMENT, LINE_POS, YAO_LABEL, isYinValue, type YaoValue } from "@/lib/liuyao/names";
+import { DatePicker } from "./date-picker";
 import { HexStack } from "./figures";
 import { PlateView } from "./plate";
 
@@ -215,13 +216,7 @@ export function LiuYaoApp() {
               <label className="text-sm text-muted" htmlFor="cast-date">
                 占日
               </label>
-              <input
-                id="cast-date"
-                type="date"
-                value={date}
-                onChange={(event) => setDate(event.target.value)}
-                className="h-11 border border-line bg-paper px-3 text-ink"
-              />
+              <DatePicker id="cast-date" value={date} onChange={setDate} />
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="所问之事">
